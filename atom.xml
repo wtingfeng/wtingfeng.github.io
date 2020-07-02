@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://wtingfeng.github.io</id>
     <title>菜菜成长之路</title>
-    <updated>2020-07-02T10:13:34.772Z</updated>
+    <updated>2020-07-02T10:17:13.274Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://wtingfeng.github.io"/>
     <link rel="self" href="https://wtingfeng.github.io/atom.xml"/>
@@ -10,6 +10,19 @@
     <logo>https://wtingfeng.github.io/images/avatar.png</logo>
     <icon>https://wtingfeng.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 菜菜成长之路</rights>
+    <entry>
+        <title type="html"><![CDATA[多态]]></title>
+        <id>https://wtingfeng.github.io/post/duo-tai/</id>
+        <link href="https://wtingfeng.github.io/post/duo-tai/">
+        </link>
+        <updated>2020-07-02T10:16:30.000Z</updated>
+        <summary type="html"><![CDATA[<p>静态多态<br>
+动态多态</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>静态多态<br>
+动态多态</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[c++的特性]]></title>
         <id>https://wtingfeng.github.io/post/cde-te-xing/</id>

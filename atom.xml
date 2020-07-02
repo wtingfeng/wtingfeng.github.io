@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://wtingfeng.github.io</id>
     <title>菜菜成长之路</title>
-    <updated>2020-07-02T07:12:04.863Z</updated>
+    <updated>2020-07-02T07:13:33.093Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://wtingfeng.github.io"/>
     <link rel="self" href="https://wtingfeng.github.io/atom.xml"/>
@@ -27,16 +27,6 @@
 1、相同的两个数异或为0：n^n=0<br>
 2、任意数和0异或结果为该任意数：0^n=n<br>
 3、异或满足交换律：a ^ b ^ c=a ^ c ^ b</p>
-<!-- more -->
-<p><strong>class Solution {<br>
-public:<br>
-    int singleNumber(vector<int>&amp; nums) {<br>
-        int res=0;<br>
-        for(auto i:nums)<br>
-            res^=i;<br>
-        return res;<br>
-    }<br>
-};</strong></p>
 ]]></content>
     </entry>
     <entry>
@@ -45,55 +35,5 @@ public:<br>
         <link href="https://wtingfeng.github.io/post/suan-fa-gua-hao-pei-dui-wen-ti/">
         </link>
         <updated>2020-07-02T02:54:06.000Z</updated>
-        <content type="html"><![CDATA[<p>题目描述：给出一个仅包含字符'(',')','{','}','['和']',的字符串，判断给出的字符串是否是合法的括号序列。括号必须以正确的顺序关闭，&quot;()&quot;,&quot;()[]{}&quot;和&quot;{[()]}&quot;都是合法的括号序列，但是&quot;(]&quot;和&quot;([)]&quot;不合法。</p>
-<p>知识点：栈<br>
-思路分析：方法一、结合栈的性质后进先出，遇到左括号压入栈，遇到右括号判断与栈顶元素是否匹配，若匹配则将栈顶元素弹出，不匹配则返回false，最后若栈为空，返回true；</p>
-<p>class Solution{</p>
-<!-- more -->public:
-<pre><code>bool isValid(string s){
-    map&lt;char,char&gt; match={ {'}','{'}, {']','['}, {')','('} };
-    stack&lt;char&gt; symbols;
-    for(auto c:s){
-        if(c=='('||c=='{'||c=='[')
-            symbols.push(c);
-        else{
-            if(symbols.empty())
-                return false;
-            if(match[c]==symbols.top())
-                symbols.pop();
-            else
-                return false;
-        }        
-    }
-    if(symbols.empty())
-        return true;
-    else
-        return false;
-}
-</code></pre>
-<p>};</p>
-<p>方法二：针对字符串中的每个元素，若栈为空直接压入栈，否则先判断当前字符与栈顶元素是否配对，若配对则弹出栈，若不配对就压入栈。最后若栈为空，则返回true，否则返回false；<br>
-class Solution{</p>
-<!-- more -->public:
-<pre><code>bool isValid(string s) {
-    stack&lt;char&gt; symbols;
-    for(auto c:s){
-        if(symbols.empty())
-            symbols.push(c);
-        else if(isSym(symbols.top(),c))
-            symbols.pop();
-            else   
-                symbols.push(c);
-    }
-    return symbols.size()==0;
-}
-</code></pre>
-<!-- more -->private:
-<pre><code>bool isSym(char c1,char c2){
-    return (c1=='(' &amp;&amp; c2==')') || (c1=='[' &amp;&amp; c2==']') || (c1=='{' &amp;&amp; c2=='}');
-}
-</code></pre>
-<p>};</p>
-]]></content>
     </entry>
 </feed>

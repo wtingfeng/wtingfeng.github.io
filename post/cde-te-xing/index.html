@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>菜菜成长之路</title>
+<title>c++的特性 | 菜菜成长之路</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -20,7 +20,13 @@
 
 
 
-    <meta name="description" content="小冯学习笔记">
+    <meta name="description" content="1、C++和C的区别
+（1）设计思想上：C++是面向对象的语言，C是面向过程的结构化编程语言。
+  面向过程：数据结构+算法
+     ①数据和数据操作分离，代码可重用性差，不利于代码的维护和扩充
+     ②以功能为基础，核心是算法。
+ ..." />
+    <meta name="keywords" content="" />
   </head>
   <body>
     <div id="app" class="main">
@@ -98,17 +104,15 @@
 
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
-          
-            <article class="post-item">
-              <div class="left">
-                <a href="https://wtingfeng.github.io/post/cde-te-xing/">
-                  <h2 class="post-title">c++的特性</h2>
-                </a>
-                <div class="post-date">
-                  2020-07-02
-                </div>
-                <div class="post-abstract">
-                  <p>1、C++和C的区别<br>
+          <div class="post-detail">
+            <h2 class="post-title">c++的特性</h2>
+            <div class="post-date">2020-07-02</div>
+            
+              <div class="feature-container" style="background-image: url('https://wtingfeng.github.io/post-images/cde-te-xing.jpg')">
+              </div>
+            
+            <div class="post-content" v-pre>
+              <p>1、C++和C的区别<br>
 （1）设计思想上：C++是面向对象的语言，C是面向过程的结构化编程语言。<br>
   面向过程：数据结构+算法<br>
      ①数据和数据操作分离，代码可重用性差，不利于代码的维护和扩充<br>
@@ -121,80 +125,33 @@
   ①C++具有抽象、封装、继承和多态四种特性<br>
   ②C++相比C增加了类型安全的功能<br>
   ③C++支持范式编程，比如模板类、函数模板等</p>
+<!-- more -->
+<p>2、C++的四大特性<br>
+（1）抽象性<br>
+    抽象是通过抽取实例的共同性质以后形成概念的过程，包括数据抽象和行为抽象。数据抽象描述某类对象的属性或状况，行为抽象描述了某类对象的共同行为特征或具有的共同操作。在面向对象程序设计中，通过类来描述和实现抽象，类是对具有相同数据结构和相同操作的一类对象的描述。类和对象之间的关系式抽象和具体的关系，类是多个对象进行综合抽象的结果，一个对象是类的一个实例。<br>
+（2）封装性<br>
+    封装是把数据和对数据的操作代码集中起来放在对象内部，并尽可能隐蔽对象的内部细节。使用一个对象时，只需知道对象向外界提供的接口形式而无需知道对象的数据结构细节和操作的算法。对象的封装机制将对象的使用者和设计者分开，使用者不必知道对象行为实现的细节，只需要使用设计者提供的接口。封装隐藏了复杂性，并提供了代码重用性，减轻了开发软件系统的难度。<br>
+（3）继承性<br>
+    允许在已有类的基础上通过增加新特征而派生出新的类，原有的类成为基类，而新建立的类成为派生类。派生类自动继承了基类的属性和方法，在整个类的继承关系中，越是上层的类越简单一般，而越是下层的类越具体详细。它允许程序员在保持原有的特性基础上进行扩展，增加功能，这样产生新的类。继承呈现了面向对象程序设计的层析结构，体现了由简单到复杂的认知过程，减少了软件开发的工作量，也实现了代码的复用。<br>
+（4）多态性<br>
+    面向对象系统的多态性是指不同的对象收到相同的消息时会产生不同的行为方式。C++支持两种多态性，即静态多态(编译时的多态性)和动态多态(运行时的多态性)。编译时的多态性是通过重载来实现的，运行时的多态性是通过虚函数来实现的。多态性增加了灵活性和重用性，为开发与维护提供了极大的便利。</p>
 
-                </div>
-              </div>
-              
-                <a class="right" href="https://wtingfeng.github.io/post/cde-te-xing/">
-                  <div class="feature-container" style="background-image: url('https://wtingfeng.github.io/post-images/cde-te-xing.jpg')">
-                  </div>
-                </a>
-              
-            </article>
-          
-            <article class="post-item">
-              <div class="left">
+            </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
                 <a href="https://wtingfeng.github.io/post/3zhi-chu-xian-yi-ci-de-shu-zi-ii/">
-                  <h2 class="post-title">3、只出现一次的数字 II</h2>
+                  <h3 class="post-title">
+                    3、只出现一次的数字 II
+                  </h3>
                 </a>
-                <div class="post-date">
-                  2020-07-02
-                </div>
-                <div class="post-abstract">
-                  <p>题目描述：给定一个非空整数数组，除了某个元素只出现一次以外，其余每个元素均出现了三次。找出那个只出现了一次的元素。</p>
-
-                </div>
               </div>
-              
-            </article>
-          
-            <article class="post-item">
-              <div class="left">
-                <a href="https://wtingfeng.github.io/post/1gua-hao-pei-dui-wen-ti/">
-                  <h2 class="post-title">1、括号配对问题</h2>
-                </a>
-                <div class="post-date">
-                  2020-07-02
-                </div>
-                <div class="post-abstract">
-                  <p>题目描述：给出一个仅包含字符'(',')','{','}','['和']',的字符串，判断给出的字符串是否是合法的括号序列。括号必须以正确的顺序关闭，&quot;()&quot;,&quot;()[]{}&quot;和&quot;{[()]}&quot;都是合法的括号序列，但是&quot;(]&quot;和&quot;([)]&quot;不合法。</p>
+            
 
-                </div>
-              </div>
-              
-                <a class="right" href="https://wtingfeng.github.io/post/1gua-hao-pei-dui-wen-ti/">
-                  <div class="feature-container" style="background-image: url('https://wtingfeng.github.io/post-images/1gua-hao-pei-dui-wen-ti.jpg')">
-                  </div>
-                </a>
-              
-            </article>
-          
-            <article class="post-item">
-              <div class="left">
-                <a href="https://wtingfeng.github.io/post/2zhi-chu-xian-yi-ci-de-shu-zi/">
-                  <h2 class="post-title">2、只出现一次的数字</h2>
-                </a>
-                <div class="post-date">
-                  2020-07-02
-                </div>
-                <div class="post-abstract">
-                  <p>题目描述：给定一个非空整数数组，除了某个元素只出现一次以外，其余每个元素均出现两次。找出那个只出现了一次的元素。</p>
+            
 
-                </div>
-              </div>
-              
-                <a class="right" href="https://wtingfeng.github.io/post/2zhi-chu-xian-yi-ci-de-shu-zi/">
-                  <div class="feature-container" style="background-image: url('https://wtingfeng.github.io/post-images/2zhi-chu-xian-yi-ci-de-shu-zi.jpg')">
-                  </div>
-                </a>
-              
-            </article>
-          
-
-          <div class="pagination-container">
-  
-  
-</div>
+          </div>
 
         </div>
       </div>

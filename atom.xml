@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://wtingfeng.github.io</id>
     <title>菜菜成长之路</title>
-    <updated>2020-07-02T07:49:03.241Z</updated>
+    <updated>2020-07-02T10:05:45.800Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://wtingfeng.github.io"/>
     <link rel="self" href="https://wtingfeng.github.io/atom.xml"/>
@@ -10,6 +10,52 @@
     <logo>https://wtingfeng.github.io/images/avatar.png</logo>
     <icon>https://wtingfeng.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 菜菜成长之路</rights>
+    <entry>
+        <title type="html"><![CDATA[c++的特性]]></title>
+        <id>https://wtingfeng.github.io/post/cde-te-xing/</id>
+        <link href="https://wtingfeng.github.io/post/cde-te-xing/">
+        </link>
+        <updated>2020-07-02T09:12:05.000Z</updated>
+        <summary type="html"><![CDATA[<p>1、C++和C的区别<br>
+（1）设计思想上：C++是面向对象的语言，C是面向过程的结构化编程语言。<br>
+  面向过程：数据结构+算法<br>
+     ①数据和数据操作分离，代码可重用性差，不利于代码的维护和扩充<br>
+     ②以功能为基础，核心是算法。<br>
+  面向对象：对象+消息<br>
+     ①以数据为基础，把数据和对数据的操作过程作为一个整体<br>
+     ②数据对外界是隐藏的，四个特性提高代码可重用性，可扩充性和可维护性<br>
+     ③核心是对象<br>
+（2）语法上：<br>
+  ①C++具有抽象、封装、继承和多态四种特性<br>
+  ②C++相比C增加了类型安全的功能<br>
+  ③C++支持范式编程，比如模板类、函数模板等</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>1、C++和C的区别<br>
+（1）设计思想上：C++是面向对象的语言，C是面向过程的结构化编程语言。<br>
+  面向过程：数据结构+算法<br>
+     ①数据和数据操作分离，代码可重用性差，不利于代码的维护和扩充<br>
+     ②以功能为基础，核心是算法。<br>
+  面向对象：对象+消息<br>
+     ①以数据为基础，把数据和对数据的操作过程作为一个整体<br>
+     ②数据对外界是隐藏的，四个特性提高代码可重用性，可扩充性和可维护性<br>
+     ③核心是对象<br>
+（2）语法上：<br>
+  ①C++具有抽象、封装、继承和多态四种特性<br>
+  ②C++相比C增加了类型安全的功能<br>
+  ③C++支持范式编程，比如模板类、函数模板等</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[3、只出现一次的数字 II]]></title>
+        <id>https://wtingfeng.github.io/post/3zhi-chu-xian-yi-ci-de-shu-zi-ii/</id>
+        <link href="https://wtingfeng.github.io/post/3zhi-chu-xian-yi-ci-de-shu-zi-ii/">
+        </link>
+        <updated>2020-07-02T07:58:01.000Z</updated>
+        <summary type="html"><![CDATA[<p>题目描述：给定一个非空整数数组，除了某个元素只出现一次以外，其余每个元素均出现了三次。找出那个只出现了一次的元素。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>题目描述：给定一个非空整数数组，除了某个元素只出现一次以外，其余每个元素均出现了三次。找出那个只出现了一次的元素。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[1、括号配对问题]]></title>
         <id>https://wtingfeng.github.io/post/1gua-hao-pei-dui-wen-ti/</id>

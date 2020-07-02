@@ -1,0 +1,213 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>算法-括号配对问题 | Gridea</title>
+<link rel="shortcut icon" href="https://wtingfeng.github.io/favicon.ico?v=1593662549484">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://wtingfeng.github.io/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="算法-括号配对问题 | Gridea - Atom Feed" href="https://wtingfeng.github.io/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+    <meta name="description" content="题目描述：给出一个仅包含字符'(',')','{','}','['和']',的字符串，判断给出的字符串是否是合法的括号序列。括号必须以正确的顺序关闭，&quot;()&quot;,&quot;()[]{}&quot;和&quot;{[()]..." />
+    <meta name="keywords" content="" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://wtingfeng.github.io">
+  <img class="avatar" src="https://wtingfeng.github.io/images/avatar.png?v=1593662549484" alt="">
+  </a>
+  <h1 class="site-title">
+    Gridea
+  </h1>
+  <p class="site-description">
+    温故而知新
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              算法-括号配对问题
+            </h2>
+            <div class="post-info">
+              <span>
+                2020-07-02
+              </span>
+              <span>
+                2 min read
+              </span>
+              
+            </div>
+            
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <p>题目描述：给出一个仅包含字符'(',')','{','}','['和']',的字符串，判断给出的字符串是否是合法的括号序列。括号必须以正确的顺序关闭，&quot;()&quot;,&quot;()[]{}&quot;和&quot;{[()]}&quot;都是合法的括号序列，但是&quot;(]&quot;和&quot;([)]&quot;不合法。</p>
+<p>知识点：栈<br>
+思路分析：方法一、结合栈的性质后进先出，遇到左括号压入栈，遇到右括号判断与栈顶元素是否匹配，若匹配则将栈顶元素弹出，不匹配则返回false，最后若栈为空，返回true；<br>
+class Solution{</p>
+<!-- more -->public:
+<pre><code>bool isValid(string s){
+    map&lt;char,char&gt; match={ {'}','{'}, {']','['}, {')','('} };
+    stack&lt;char&gt; symbols;
+    for(auto c:s){
+        if(c=='('||c=='{'||c=='[')
+            symbols.push(c);
+        else{
+            if(symbols.empty())
+                return false;
+            if(match[c]==symbols.top())
+                symbols.pop();
+            else
+                return false;
+        }        
+    }
+    if(symbols.empty())
+        return true;
+    else
+        return false;
+}
+</code></pre>
+<p>};</p>
+<p>方法二：针对字符串中的每个元素，若栈为空直接压入栈，否则先判断当前字符与栈顶元素是否配对，若配对则弹出栈，若不配对就压入栈。最后若栈为空，则返回true，否则返回false；<br>
+class Solution{</p>
+<!-- more -->public:
+<pre><code>bool isValid(string s) {
+    stack&lt;char&gt; symbols;
+    for(auto c:s){
+        if(symbols.empty())
+            symbols.push(c);
+        else if(isSym(symbols.top(),c))
+            symbols.pop();
+            else   
+                symbols.push(c);
+    }
+    return symbols.size()==0;
+}
+</code></pre>
+<!-- more -->private:
+<pre><code>bool isSym(char c1,char c2){
+    return (c1=='(' &amp;&amp; c2==')') || (c1=='[' &amp;&amp; c2==']') || (c1=='{' &amp;&amp; c2=='}');
+}
+</code></pre>
+<p>};</p>
+
+              </div>
+              <div class="toc-container">
+                
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://wtingfeng.github.io/post/hello-gridea/">
+              <h3 class="post-title">
+                Hello Gridea
+              </h3>
+            </a>
+          </div>
+        
+
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+  <a class="rss" href="https://wtingfeng.github.io/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>

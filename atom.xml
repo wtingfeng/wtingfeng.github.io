@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://wtingfeng.github.io</id>
     <title>菜菜成长之路</title>
-    <updated>2020-07-02T06:07:53.406Z</updated>
+    <updated>2020-07-02T06:27:04.791Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://wtingfeng.github.io"/>
     <link rel="self" href="https://wtingfeng.github.io/atom.xml"/>
@@ -11,7 +11,7 @@
     <icon>https://wtingfeng.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 菜菜成长之路</rights>
     <entry>
-        <title type="html"><![CDATA[算法-括号配对问题 ]]></title>
+        <title type="html"><![CDATA[1、括号配对问题]]></title>
         <id>https://wtingfeng.github.io/post/suan-fa-gua-hao-pei-dui-wen-ti/</id>
         <link href="https://wtingfeng.github.io/post/suan-fa-gua-hao-pei-dui-wen-ti/">
         </link>

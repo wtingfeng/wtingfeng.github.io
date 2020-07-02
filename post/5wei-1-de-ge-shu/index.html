@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>标签列表 | 菜菜成长之路</title>
+<title>5、位1的个数 | 菜菜成长之路</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -20,7 +20,10 @@
 
 
 
-    <meta name="description" content="小冯学习笔记">
+    <meta name="description" content="题目描述：编写一个函数，输入是一个无符号整数，返回其二进制表达式中数字位数为 ‘1’ 的个数（也被称为汉明重量）。
+
+思路：对于任意数字，将n和n-1做与运算，会把最后一个1的位变成0。在二进制表示中，数字n中最低位的1总是对应n-1中的0..." />
+    <meta name="keywords" content="" />
   </head>
   <body>
     <div id="app" class="main">
@@ -98,14 +101,47 @@
 
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
-          <h2 class="tag-list-title">标签列表</h2>
-          <div class="tags-container">
+          <div class="post-detail">
+            <h2 class="post-title">5、位1的个数</h2>
+            <div class="post-date">2020-07-02</div>
             
-              <a class="tag" href="https://wtingfeng.github.io/tag/QPPfaiqeH/">c++</a>
+            <div class="post-content" v-pre>
+              <p>题目描述：编写一个函数，输入是一个无符号整数，返回其二进制表达式中数字位数为 ‘1’ 的个数（也被称为汉明重量）。</p>
+<!-- more -->
+<p>思路：对于任意数字，将n和n-1做与运算，会把最后一个1的位变成0。在二进制表示中，数字n中最低位的1总是对应n-1中的0。因此，将 n和 n - 1 与运算总是能把 n中最低位的 1变成 0，并保持其他位不变。<br>
+如：n=1011 1000; n-1=1011 0111; n&amp;(n-1)=1011 0000<br>
+    n=1011 1011; n-1=1011 1010; n&amp;(n-1)=1011 1010</p>
+<!-- more -->
+<p>实现：<br>
+<strong>class Solution{<br>
+public:<br>
+    int hammingWeight(int n){<br>
+        int sum=0;<br>
+        while(n!=0){<br>
+            sum++;<br>
+            n&amp;=(n-1);<br>
+        }<br>
+        return sum;<br>
+    }<br>
+};</strong></p>
+
+            </div>
             
-              <a class="tag" href="https://wtingfeng.github.io/tag/cB4QB3H_s/">算法</a>
             
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://wtingfeng.github.io/post/4zhi-chu-xian-yi-ci-de-shu-zi-iii/">
+                  <h3 class="post-title">
+                    4、只出现一次的数字 III
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
           </div>
+
         </div>
       </div>
     </div>

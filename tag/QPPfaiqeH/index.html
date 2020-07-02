@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>2、只出现一次的数字 | 菜菜成长之路</title>
+<title>c++ | 菜菜成长之路</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -20,10 +20,7 @@
 
 
 
-    <meta name="description" content="题目描述：给定一个非空整数数组，除了某个元素只出现一次以外，其余每个元素均出现两次。找出那个只出现了一次的元素。
-
-思路：将数组中的全部数字进行异或运算，得到的结果即为只出现一次的数字，其余均出现两次的数字异或结果为0，0与只出现一次的元素..." />
-    <meta name="keywords" content="算法" />
+    <meta name="description" content="小冯学习笔记">
   </head>
   <body>
     <div id="app" class="main">
@@ -101,46 +98,35 @@
 
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
-          <div class="post-detail">
-            <h2 class="post-title">2、只出现一次的数字</h2>
-            <div class="post-date">2020-07-02</div>
-            
-              <div class="feature-container" style="background-image: url('https://wtingfeng.github.io/post-images/2zhi-chu-xian-yi-ci-de-shu-zi.jpg')">
+          <h2 class="current-tag">标签: c++</h2>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://wtingfeng.github.io/post/cde-te-xing/">
+                  <h2 class="post-title">c++的特性</h2>
+                </a>
+                <div class="post-date">
+                  2020-07-02
+                </div>
+                <div class="post-abstract">
+                  <p>c++和c的区别<br>
+c++的特性</p>
+
+                </div>
               </div>
-            
-            <div class="post-content" v-pre>
-              <p>题目描述：给定一个非空整数数组，除了某个元素只出现一次以外，其余每个元素均出现两次。找出那个只出现了一次的元素。</p>
-<!-- more -->
-<p>思路：将数组中的全部数字进行异或运算，得到的结果即为只出现一次的数字，其余均出现两次的数字异或结果为0，0与只出现一次的元素异或，得到只出现一次的元素，满足如下规律。<br>
-1、相同的两个数异或为0：n^n=0<br>
-2、任意数和0异或结果为该任意数：0^n=n<br>
-3、异或满足交换律：a ^ b ^ c=a ^ c ^ b</p>
-<!-- more -->
-<p><strong>class Solution {<br>
-public:<br>
-    int singleNumber(vector<int>&amp; nums) {<br>
-        int res=0;<br>
-        for(auto i:nums)<br>
-            res^=i;<br>
-        return res;<br>
-    }<br>
-};</strong></p>
+              
+                <a class="right" href="https://wtingfeng.github.io/post/cde-te-xing/">
+                  <div class="feature-container" style="background-image: url('https://wtingfeng.github.io/post-images/cde-te-xing.jpg')">
+                  </div>
+                </a>
+              
+            </article>
+          
 
-            </div>
-            
-              <div class="tag-container">
-                
-                  <a href="https://wtingfeng.github.io/tag/cB4QB3H_s/" class="tag">
-                    算法
-                  </a>
-                
-              </div>
-            
-            
-
-            
-
-          </div>
+          <div class="pagination-container">
+  
+  
+</div>
 
         </div>
       </div>

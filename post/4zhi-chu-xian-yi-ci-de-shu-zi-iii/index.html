@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>3、只出现一次的数字 II | 菜菜成长之路</title>
+<title>4、只出现一次的数字 III | 菜菜成长之路</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -20,9 +20,9 @@
 
 
 
-    <meta name="description" content="题目描述：给定一个非空整数数组，除了某个元素只出现一次以外，其余每个元素均出现了三次。找出那个只出现了一次的元素。
+    <meta name="description" content="题目描述：给定一个整数数组 nums，其中恰好有两个元素只出现一次，其余所有元素均出现两次。 找出只出现一次的那两个元素。
 
-思路：需要设计一个方法使得一个数出现3次后能够自动抵消为0，最后剩下的就是只出现1次的数字。而一个二进制位只能表示0和1，..." />
+思路：假设两个只出现1次的元素为a和b，按照异或的运算规律，将数组nums中的所有元素异或得到的结果为a ^ b=..." />
     <meta name="keywords" content="" />
   </head>
   <body>
@@ -102,25 +102,43 @@
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
           <div class="post-detail">
-            <h2 class="post-title">3、只出现一次的数字 II</h2>
+            <h2 class="post-title">4、只出现一次的数字 III</h2>
             <div class="post-date">2020-07-02</div>
             
-              <div class="feature-container" style="background-image: url('https://wtingfeng.github.io/post-images/3zhi-chu-xian-yi-ci-de-shu-zi-ii.jpg')">
-              </div>
-            
             <div class="post-content" v-pre>
-              <p>题目描述：给定一个非空整数数组，除了某个元素只出现一次以外，其余每个元素均出现了三次。找出那个只出现了一次的元素。</p>
+              <p>题目描述：给定一个整数数组 nums，其中恰好有两个元素只出现一次，其余所有元素均出现两次。 找出只出现一次的那两个元素。</p>
 <!-- more -->
-<p>思路：需要设计一个方法使得一个数出现3次后能够自动抵消为0，最后剩下的就是只出现1次的数字。而一个二进制位只能表示0和1，可以记录一个数出现了1次或2次。要记录一个数出现3次，需要两个二进制位来表示三个状态，即00→01→10→00→…</p>
+<p>思路：假设两个只出现1次的元素为a和b，按照异或的运算规律，将数组nums中的所有元素异或得到的结果为a ^ b=c。异或的真值表为：0 ^ 0=0；0 ^ 1=1；1 ^ 0=1；1 ^ 1=0，因此若将a^b的运算过程和运算结果c用二进制形式表示，那么c的二进制表示中为1的位说明a和b对应的该位上的值不同。取c的二进制形式中最右边位1的位，保留为1，其余位置0，那么可以利用该数与数组全部元素进行&amp;操作，将数组nums划分为两类，若结果为0划分到第一类，若结果为1划分到第二类。这样两个只出现1次的元素a和b就分别被划分到第一类和第二类，任一出现2次的元素也被划分至同一类中。分别对两部分数组的所有元素进行异或操作，分别得到a和b的值。</p>
+<!-- more -->
+<p>实现：<br>
+<strong>class Solution{<br>
+public:<br>
+    vector<int> singleNumber(vector<int>&amp; nums){<br>
+        int c=0;<br>
+        for(auto i:nums)<br>
+            c^=i;<br>
+        c&amp;=-c;<br>
+        vector<int> res;<br>
+        res.push_back(0);<br>
+        res.push_back(0);<br>
+        for(auto i:nums){<br>
+            if((i&amp;c)==0)<br>
+                res[0]^=i;<br>
+            else<br>
+                res[1]^=i;<br>
+        }<br>
+        return result;<br>
+    }<br>
+};</strong></p>
 
             </div>
             
             
               <div class="next-post">
                 <div class="next">下一篇</div>
-                <a href="https://wtingfeng.github.io/post/1gua-hao-pei-dui-wen-ti/">
+                <a href="https://wtingfeng.github.io/post/duo-tai/">
                   <h3 class="post-title">
-                    1、括号配对问题
+                    多态
                   </h3>
                 </a>
               </div>

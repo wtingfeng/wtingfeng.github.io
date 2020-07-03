@@ -8,7 +8,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.0/css/all.min.css">
-<link rel="shortcut icon" href="https://wtingfeng.github.io/favicon.ico?v=1593743167210">
+<link rel="shortcut icon" href="https://wtingfeng.github.io/favicon.ico?v=1593743856610">
 <link rel="stylesheet" href="https://wtingfeng.github.io/styles/main.css">
 
 
@@ -32,7 +32,7 @@
   <div class="top-container" data-aos="fade-right">
     <div class="top-header-container">
       <a class="site-title-container" href="https://wtingfeng.github.io">
-        <img src="https://wtingfeng.github.io/images/avatar.png?v=1593743167210" class="site-logo">
+        <img src="https://wtingfeng.github.io/images/avatar.png?v=1593743856610" class="site-logo">
         <h1 class="site-title">菜菜成长之路</h1>
       </a>
       <div class="menu-btn" @click="menuVisible = !menuVisible">
@@ -119,14 +119,32 @@
 };<br>
 class Solution {<br>
 public:<br>
-  ListNode * deleteDuplicates(ListNode * head) {<br>
+  ListNode * deleteDuplicates(ListNode *head) {<br>
     ListNode *current=head;<br>
     while(current!=nullptr &amp;&amp;current-&gt;next!=nullptr){<br>
-      if(current-&gt;val==current-&gt;next-&gt;val)<br>
+      if(current-&gt;val<mark>current-&gt;next-&gt;val)<br>
         current-&gt;next=current-&gt;next-&gt;next;<br>
       else<br>
         current=current-&gt;next;<br>
     }<br>
+    return head;<br>
+  }<br>
+};<br>
+方法二、使用递归解决该问题，递归的终止条件为当head指向的链表只有一个元素时，该链表无重复元素，此时即可返回，返回的应该是链表的头结点。若head-&gt;next指向了一个去重链表，此时判断head-&gt;val和head-&gt;next-&gt;val是否相等，若相等，则说明元素重复，直接返回head-&gt;next,若不等则无重复元素，直接返回head。<br>
+struct ListNode {<br>
+  int val;<br>
+  ListNode *next;<br>
+  ListNode(int x) : val(x), next(NULL) {}<br>
+};<br>
+class Solution {<br>
+public:<br>
+  ListNode * deleteDuplicates(ListNode *head) {<br>
+    if(!head || !head-&gt;next)<br>
+      return head;<br>
+    ListNode *next = head-&gt;next;<br>
+    head-&gt;next = deleteDuplicates(next);<br>
+    if(head-&gt;val</mark>next-&gt;val)<br>
+      head=head-&gt;next;<br>
     return head;<br>
   }<br>
 };</p>

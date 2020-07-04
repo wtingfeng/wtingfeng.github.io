@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>6、数组中重复的数据 | 菜菜成长之路</title>
+<title>10、反转链表 | 菜菜成长之路</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -20,10 +20,12 @@
 
 
 
-    <meta name="description" content="题目描述：给定一个整数数组 a，其中1 ≤ a[i] ≤ n （n为数组长度）, 其中有些元素出现两次而其他元素出现一次。找到所有出现两次的元素。
+    <meta name="description" content="题目描述：定义一个函数，输入一个链表的头节点，反转该链表并输出反转后链表的头节点。
 
-思路：
-" />
+思路：方法一、双指针迭代。
+1、定义两个指针，pre和cur，pre在前，cur在后。
+2、每次让cur的next指向pre，实现一次局部反转。
+3、局部..." />
     <meta name="keywords" content="算法" />
   </head>
   <body>
@@ -103,13 +105,48 @@
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
           <div class="post-detail">
-            <h2 class="post-title">6、数组中重复的数据</h2>
-            <div class="post-date">2020-07-02</div>
+            <h2 class="post-title">10、反转链表</h2>
+            <div class="post-date">2020-07-03</div>
             
             <div class="post-content" v-pre>
-              <p>题目描述：给定一个整数数组 a，其中1 ≤ a[i] ≤ n （n为数组长度）, 其中有些元素出现两次而其他元素出现一次。找到所有出现两次的元素。</p>
+              <p>题目描述：定义一个函数，输入一个链表的头节点，反转该链表并输出反转后链表的头节点。</p>
 <!-- more -->
-<p>思路：</p>
+<p>思路：方法一、双指针迭代。<br>
+1、定义两个指针，pre和cur，pre在前，cur在后。<br>
+2、每次让cur的next指向pre，实现一次局部反转。<br>
+3、局部反转完成后，pre和cur同时往前移动一个位置。<br>
+4、循环上述过程，直到cur到达链表尾部。<br>
+<img src="https://wtingfeng.github.io/post-images/1593829235892.png" alt="" loading="lazy"><br>
+class Solution {<br>
+public:<br>
+  ListNode * reverseList(ListNode *head) {<br>
+    ListNode *pre=nullptr, *cur=head;<br>
+    while(cur){<br>
+      ListNode *tmp=cur-&gt;next;<br>
+      cur-&gt;next=pre;<br>
+      pre=cur;<br>
+      cur=tmp;<br>
+    }<br>
+    return pre;<br>
+  }<br>
+};</p>
+<p>方法二、递归。<br>
+递归的终止条件：当前结点为null，或者下一个结点为null。<br>
+1、使用递归函数，一直递归到链表的最后一个结点，该结点就是反转后的头结点。<br>
+2、每次函数在返回的过程中，让当前结点的下一个结点的next指向当前结点。<br>
+3、同时让当前结点的next指向null，从而实现从链表尾部开始的局部反转。<br>
+4、当递归函数全部出栈后，链表反转完成。<br>
+class Solution {<br>
+public:<br>
+  ListNode * reverseList(ListNode *head) {<br>
+    if(head == nullptr || head-&gt;next == nullptr)<br>
+      return head;<br>
+    ListNode *ret=reverseList(head-&gt;next);<br>
+    head-&gt;next-&gt;next=head;<br>
+    head-&gt;next=nullptr;<br>
+    return ret;<br>
+  }<br>
+};</p>
 
             </div>
             
@@ -124,9 +161,9 @@
             
               <div class="next-post">
                 <div class="next">下一篇</div>
-                <a href="https://wtingfeng.github.io/post/5wei-1-de-ge-shu/">
+                <a href="https://wtingfeng.github.io/post/9k-ge-yi-zu-fan-zhuan-lian-biao/">
                   <h3 class="post-title">
-                    5、位1的个数
+                    9、K个一组翻转链表
                   </h3>
                 </a>
               </div>

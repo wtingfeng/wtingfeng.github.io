@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://wtingfeng.github.io</id>
     <title>菜菜成长之路</title>
-    <updated>2020-07-03T02:37:40.270Z</updated>
+    <updated>2020-07-04T02:57:58.989Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://wtingfeng.github.io"/>
     <link rel="self" href="https://wtingfeng.github.io/atom.xml"/>
@@ -10,6 +10,28 @@
     <logo>https://wtingfeng.github.io/images/avatar.png</logo>
     <icon>https://wtingfeng.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 菜菜成长之路</rights>
+    <entry>
+        <title type="html"><![CDATA[10、反转链表]]></title>
+        <id>https://wtingfeng.github.io/post/10fan-zhuan-lian-biao/</id>
+        <link href="https://wtingfeng.github.io/post/10fan-zhuan-lian-biao/">
+        </link>
+        <updated>2020-07-03T03:05:03.000Z</updated>
+        <summary type="html"><![CDATA[<p>题目描述：定义一个函数，输入一个链表的头节点，反转该链表并输出反转后链表的头节点。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>题目描述：定义一个函数，输入一个链表的头节点，反转该链表并输出反转后链表的头节点。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[9、K个一组翻转链表]]></title>
+        <id>https://wtingfeng.github.io/post/9k-ge-yi-zu-fan-zhuan-lian-biao/</id>
+        <link href="https://wtingfeng.github.io/post/9k-ge-yi-zu-fan-zhuan-lian-biao/">
+        </link>
+        <updated>2020-07-03T02:54:18.000Z</updated>
+        <summary type="html"><![CDATA[<p>题目描述：给你一个链表，每 k 个节点一组进行翻转，请你返回翻转后的链表。k 是一个正整数，它的值小于或等于链表的长度。如果节点总数不是 k 的整数倍，那么请将最后剩余的节点保持原有顺序。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>题目描述：给你一个链表，每 k 个节点一组进行翻转，请你返回翻转后的链表。k 是一个正整数，它的值小于或等于链表的长度。如果节点总数不是 k 的整数倍，那么请将最后剩余的节点保持原有顺序。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[8、删除排序链表中的重复元素]]></title>
         <id>https://wtingfeng.github.io/post/8shan-chu-pai-xu-lian-biao-zhong-de-chong-fu-yuan-su/</id>
@@ -108,28 +130,6 @@ c++的特性</p>
         <summary type="html"><![CDATA[<p>题目描述：给定一个非空整数数组，除了某个元素只出现一次以外，其余每个元素均出现了三次。找出那个只出现了一次的元素。</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>题目描述：给定一个非空整数数组，除了某个元素只出现一次以外，其余每个元素均出现了三次。找出那个只出现了一次的元素。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[1、括号配对问题]]></title>
-        <id>https://wtingfeng.github.io/post/1gua-hao-pei-dui-wen-ti/</id>
-        <link href="https://wtingfeng.github.io/post/1gua-hao-pei-dui-wen-ti/">
-        </link>
-        <updated>2020-07-02T07:28:08.000Z</updated>
-        <summary type="html"><![CDATA[<p>题目描述：给出一个仅包含字符'(',')','{','}','['和']',的字符串，判断给出的字符串是否是合法的括号序列。括号必须以正确的顺序关闭，&quot;()&quot;,&quot;()[]{}&quot;和&quot;{[()]}&quot;都是合法的括号序列，但是&quot;(]&quot;和&quot;([)]&quot;不合法。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>题目描述：给出一个仅包含字符'(',')','{','}','['和']',的字符串，判断给出的字符串是否是合法的括号序列。括号必须以正确的顺序关闭，&quot;()&quot;,&quot;()[]{}&quot;和&quot;{[()]}&quot;都是合法的括号序列，但是&quot;(]&quot;和&quot;([)]&quot;不合法。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[2、只出现一次的数字]]></title>
-        <id>https://wtingfeng.github.io/post/2zhi-chu-xian-yi-ci-de-shu-zi/</id>
-        <link href="https://wtingfeng.github.io/post/2zhi-chu-xian-yi-ci-de-shu-zi/">
-        </link>
-        <updated>2020-07-02T06:28:56.000Z</updated>
-        <summary type="html"><![CDATA[<p>题目描述：给定一个非空整数数组，除了某个元素只出现一次以外，其余每个元素均出现两次。找出那个只出现了一次的元素。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>题目描述：给定一个非空整数数组，除了某个元素只出现一次以外，其余每个元素均出现两次。找出那个只出现了一次的元素。</p>
 ]]></content>
     </entry>
 </feed>

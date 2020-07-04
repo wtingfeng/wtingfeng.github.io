@@ -8,7 +8,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.0/css/all.min.css">
-<link rel="shortcut icon" href="https://wtingfeng.github.io/favicon.ico?v=1593831861665">
+<link rel="shortcut icon" href="https://wtingfeng.github.io/favicon.ico?v=1593833884054">
 <link rel="stylesheet" href="https://wtingfeng.github.io/styles/main.css">
 
 
@@ -22,9 +22,9 @@
 
     <meta name="description" content="题目描述：给你一个链表，每 k 个节点一组进行翻转，请你返回翻转后的链表。k 是一个正整数，它的值小于或等于链表的长度。如果节点总数不是 k 的整数倍，那么请将最后剩余的节点保持原有顺序。
 
-思路：
-..." />
-    <meta name="keywords" content="" />
+思路分析：
+1、分组。链表中的结点要按照K个为一..." />
+    <meta name="keywords" content="算法" />
   </head>
   <body>
     <div id="app" class="main">
@@ -33,7 +33,7 @@
   <div class="top-container" data-aos="fade-right">
     <div class="top-header-container">
       <a class="site-title-container" href="https://wtingfeng.github.io">
-        <img src="https://wtingfeng.github.io/images/avatar.png?v=1593831861665" class="site-logo">
+        <img src="https://wtingfeng.github.io/images/avatar.png?v=1593833884054" class="site-logo">
         <h1 class="site-title">菜菜成长之路</h1>
       </a>
       <div class="menu-btn" @click="menuVisible = !menuVisible">
@@ -109,9 +109,21 @@
             <div class="post-content" v-pre>
               <p>题目描述：给你一个链表，每 k 个节点一组进行翻转，请你返回翻转后的链表。k 是一个正整数，它的值小于或等于链表的长度。如果节点总数不是 k 的整数倍，那么请将最后剩余的节点保持原有顺序。</p>
 <!-- more -->
-<p>思路：</p>
+<p>思路分析：<br>
+1、分组。链表中的结点要按照K个为一组进行分组，使用指针head依次指向每一组的头结点，head指针每次移动K步，直至链表结束。<br>
+2、组内长度判读。对于每一组，首先判断其长度是否等于K，若是就翻转链表，若不是则不需要翻转。<br>
+3、翻转每组子链表。翻转一个链表可以使用双指针法和递归法，参考10、反转链表。<br>
+4、连接至原链表。对于任一子链表，进行翻转之后，还需要将子链表的头部与上一个子链表连接，子链表的尾部与下一个子链表连接。因此，翻转每组子链表不仅需要子链表头结点head，还需要head的前驱结点pre，以便子链表翻转完后把该子链表接回pre之后。</p>
 
             </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://wtingfeng.github.io/tag/cB4QB3H_s/" class="tag">
+                    算法
+                  </a>
+                
+              </div>
             
             
               <div class="next-post">

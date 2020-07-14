@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>7、两个栈实现队列 | 菜菜成长之路</title>
+<title>13、X的平方根 | 菜菜成长之路</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -20,13 +20,9 @@
 
 
 
-    <meta name="description" content="题目描述：使用栈实现队列的下列操作：
-  push(x) -- 将一个元素放入队列的尾部。
-  pop() -- 从队列首部移除元素。
-  peek() -- 返回队列首部的元素。
-  empty() -- 返回队列是否为空。
+    <meta name="description" content="题目描述：实现 int sqrt(int x) 函数。计算并返回 x 的平方根，其中 x 是非负整数。由于返回类型是整数，结果只保留整数的部分，小数部分将被舍去。
 
-思路：栈遵..." />
+思路分析：由于x的平方根的整数部分ans是满足k^2≤x的最大k值，因此可..." />
     <meta name="keywords" content="算法" />
   </head>
   <body>
@@ -106,68 +102,43 @@
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
           <div class="post-detail">
-            <h2 class="post-title">7、两个栈实现队列</h2>
-            <div class="post-date">2020-07-02</div>
-            
-              <div class="feature-container" style="background-image: url('https://wtingfeng.github.io/post-images/7liang-ge-zhan-shi-xian-dui-lie.jpg')">
-              </div>
+            <h2 class="post-title">13、X的平方根</h2>
+            <div class="post-date">2020-07-12</div>
             
             <div class="post-content" v-pre>
-              <p>题目描述：使用栈实现队列的下列操作：<br>
-  push(x) -- 将一个元素放入队列的尾部。<br>
-  pop() -- 从队列首部移除元素。<br>
-  peek() -- 返回队列首部的元素。<br>
-  empty() -- 返回队列是否为空。</p>
+              <p>题目描述：实现 int sqrt(int x) 函数。计算并返回 x 的平方根，其中 x 是非负整数。由于返回类型是整数，结果只保留整数的部分，小数部分将被舍去。</p>
 <!-- more -->
-<p>思路：栈遵循后进先出的原则，只允许在栈顶一端完成数据的插入和删除，而队列遵循先进先出的原则，只允许在队尾插入数据，队头删除数据。用两个栈实现队列，说明我们要利用栈实现头删和尾插的操作。若插入数据(1,2,3,4)，在队列Queue中从队头到队尾的顺序为(1,2,3,4)，而在栈S1中从栈顶到栈底顺序为(4,3,2,1)，两者顺序完全相反。因此，将(4,3,2,1)的数据再插入到另一个栈S2中，其栈顶到栈底的顺序为(1,2,3,4)，与队列的访问顺序一致。因此，定义两个栈为S1和S2，S1用来插入数据，S2用来完成删除数据。如图(1)，插入元素abcd只需将abcd压入栈S1，S2为空；如图(2)，将栈S1中的元素依次pop再压入栈S2，S2中元素顺序与队列保持一致，此时对S2执行pop和peek操作，与队列结果一致。如图(3)，在执行pop和peek操作时，若S2为空，则参照图(2)先将S1中元素倒入S2，再pop和peek；若S2非空，则直接在S2中执行pop和peek。只有当S2为空之后，才将S1中的元素倒入S2。<br>
-<img src="https://wtingfeng.github.io/post-images/1593738252189.png" alt="" loading="lazy"></p>
+<p>思路分析：由于x的平方根的整数部分ans是满足k^2≤x的最大k值，因此可以对k进行二分查找，从而得到答案。二分查找的下界为0，上界可以粗略地设定为x。在二分查找的每一步中，只需要比较中间元素mid的平方与x的大小关系，并通过比较的结果调整上下界的范围。<br>
+class Solution {<br>
+public:<br>
+  int mySqrt(int x) {<br>
+    int l=0,r=x,ans=-1;<br>
+    while(l&lt;=r){<br>
+      int mid=l+(r-l)/2;<br>
+      if((long long)mid*mid&lt;=x){<br>
+        ans=mid;<br>
+        l=mid+1;<br>
+      }<br>
+      else<br>
+        r=mid-1;<br>
+    }<br>
+    return ans;<br>
+  }<br>
+};<br>
+P.S. 时间复杂度：O(logx)，即为二分查找需要的次数；空间复杂度：O(1)</p>
 <!-- more -->
-<p>实现：<br>
-class MyQueue {<br>
-private:</p>
-<pre><code>stack&lt;int&gt; s1;
-stack&lt;int&gt; s2;
-int front;    
-</code></pre>
-<p>public:</p>
-<pre><code>/** Initialize your data structure here. */
-MyQueue() {
-   
-}  
-
-/** Push element x to the back of queue. */
-void push(int x) {
-    if(s1.empty())
-        front=x;
-    s1.push(x);
-}
-
-/** Removes the element from in front of queue and returns that element. */
-int pop() {
-    if(s2.empty()){
-        while(!s1.empty()){
-            s2.push(s1.top());
-            s1.pop();
-        }
-    }
-    int res=s2.top();
-    s2.pop();
-    return res;
-}
-
-/** Get the front element. */
-int peek() {
-    if(!s2.empty())
-        return s2.top();
-    return front;
-}
-
-/** Returns whether the queue is empty. */
-bool empty() {
-    return s1.empty()&amp;&amp;s2.empty();
-}
-</code></pre>
-<p>};</p>
+<p>若返回平方根，不是只求整数部分。<br>
+double sqrt(double n){<br>
+  double l=0,r=n;<br>
+  while((r-l)&gt;=1e-6){<br>
+    double m=(l+r)/2;<br>
+    if(m * m&lt;n)<br>
+      l=m;<br>
+    else<br>
+      r=m;<br>
+  }<br>
+  return r;<br>
+}</p>
 
             </div>
             
@@ -182,9 +153,9 @@ bool empty() {
             
               <div class="next-post">
                 <div class="next">下一篇</div>
-                <a href="https://wtingfeng.github.io/post/6shu-zu-zhong-chong-fu-de-shu-ju/">
+                <a href="https://wtingfeng.github.io/post/er-wei-shu-zu-zhong-de-cha-zhao/">
                   <h3 class="post-title">
-                    6、数组中重复的数据
+                    12、二维数组中的查找
                   </h3>
                 </a>
               </div>

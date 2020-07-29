@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://wtingfeng.github.io</id>
     <title>菜菜成长之路</title>
-    <updated>2020-07-28T16:47:35.998Z</updated>
+    <updated>2020-07-29T15:13:48.544Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://wtingfeng.github.io"/>
     <link rel="self" href="https://wtingfeng.github.io/atom.xml"/>
@@ -11,7 +11,18 @@
     <icon>https://wtingfeng.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 菜菜成长之路</rights>
     <entry>
-        <title type="html"><![CDATA[16、归并排序。]]></title>
+        <title type="html"><![CDATA[17、从前序和中序遍历序列构造二叉树]]></title>
+        <id>https://wtingfeng.github.io/post/17cong-qian-xu-he-zhong-xu-bian-li-xu-lie-gou-zao-er-cha-shu/</id>
+        <link href="https://wtingfeng.github.io/post/17cong-qian-xu-he-zhong-xu-bian-li-xu-lie-gou-zao-er-cha-shu/">
+        </link>
+        <updated>2020-07-29T14:19:18.000Z</updated>
+        <summary type="html"><![CDATA[<p>题目描述：根据一棵树的前序遍历和中序遍历构造二叉树。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>题目描述：根据一棵树的前序遍历和中序遍历构造二叉树。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[16、归并排序]]></title>
         <id>https://wtingfeng.github.io/post/16gui-bing-pai-xu/</id>
         <link href="https://wtingfeng.github.io/post/16gui-bing-pai-xu/">
         </link>
@@ -109,17 +120,6 @@
         <summary type="html"><![CDATA[<p>题目描述：给你一个链表，每 k 个节点一组进行反转，请你返回反转后的链表。k 是一个正整数，它的值小于或等于链表的长度。如果节点总数不是 k 的整数倍，那么请将最后剩余的节点保持原有顺序。</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>题目描述：给你一个链表，每 k 个节点一组进行反转，请你返回反转后的链表。k 是一个正整数，它的值小于或等于链表的长度。如果节点总数不是 k 的整数倍，那么请将最后剩余的节点保持原有顺序。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[8、删除排序链表中的重复元素]]></title>
-        <id>https://wtingfeng.github.io/post/8shan-chu-pai-xu-lian-biao-zhong-de-chong-fu-yuan-su/</id>
-        <link href="https://wtingfeng.github.io/post/8shan-chu-pai-xu-lian-biao-zhong-de-chong-fu-yuan-su/">
-        </link>
-        <updated>2020-07-03T02:00:08.000Z</updated>
-        <summary type="html"><![CDATA[<p>题目描述：给定一个排序链表，删除所有重复的元素，使得每个元素只出现一次。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>题目描述：给定一个排序链表，删除所有重复的元素，使得每个元素只出现一次。</p>
 ]]></content>
     </entry>
 </feed>

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>3、只出现一次的数字 II | 菜菜成长之路</title>
+<title>17、从前序和中序遍历序列构造二叉树 | 菜菜成长之路</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -20,10 +20,11 @@
 
 
 
-    <meta name="description" content="题目描述：给定一个非空整数数组，除了某个元素只出现一次以外，其余每个元素均出现了三次。找出那个只出现了一次的元素。
+    <meta name="description" content="题目描述：根据一棵树的前序遍历和中序遍历构造二叉树。
 
-思路：需要设计一个方法使得一个数出现3次后能够自动抵消为0，最后剩下的就是只出现1次的数字。而一个二进制位只能表示0和1，..." />
-    <meta name="keywords" content="算法" />
+方法一、递归。 时间复杂度O(n)  空间复杂度O(n)
+对于任意一棵树而言，前序遍历的形式为：[根节点, [左子树前序遍历结果], [右子树前序遍历结果]]，根节点总是前序遍历的第一..." />
+    <meta name="keywords" content="" />
   </head>
   <body>
     <div id="app" class="main">
@@ -102,33 +103,48 @@
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
           <div class="post-detail">
-            <h2 class="post-title">3、只出现一次的数字 II</h2>
-            <div class="post-date">2020-07-02</div>
-            
-              <div class="feature-container" style="background-image: url('https://wtingfeng.github.io/post-images/3zhi-chu-xian-yi-ci-de-shu-zi-ii.jpg')">
-              </div>
+            <h2 class="post-title">17、从前序和中序遍历序列构造二叉树</h2>
+            <div class="post-date">2020-07-29</div>
             
             <div class="post-content" v-pre>
-              <p>题目描述：给定一个非空整数数组，除了某个元素只出现一次以外，其余每个元素均出现了三次。找出那个只出现了一次的元素。</p>
+              <p>题目描述：根据一棵树的前序遍历和中序遍历构造二叉树。</p>
 <!-- more -->
-<p>思路：需要设计一个方法使得一个数出现3次后能够自动抵消为0，最后剩下的就是只出现1次的数字。而一个二进制位只能表示0和1，可以记录一个数出现了1次或2次。要记录一个数出现3次，需要两个二进制位来表示三个状态，即00→01→10→00→…</p>
+<p>方法一、递归。 时间复杂度O(n)  空间复杂度O(n)<br>
+对于任意一棵树而言，前序遍历的形式为：[根节点, [左子树前序遍历结果], [右子树前序遍历结果]]，根节点总是前序遍历的第一个节点。而中序遍历的形式总是[[左子树中序遍历结果], 根节点, [右子树中序遍历结果]]，只要在中序遍历中定位到根节点，就可以分别知道左子树和右子树中的结点数目。对应到前序遍历的结果中，我们就知道了左子树的前序、中序遍历结果，以及右子树的前序、中序遍历结果。我们就可以递归地构造左子树和右子树，再将两棵子树接到根节点的左右位置。<br>
+struct TreeNode{<br>
+  int val;<br>
+  TreeNode * left;<br>
+  TreeNode * right;<br>
+  TreeNode(int x):val(x),left(nullptr),right(nullptr){}<br>
+};<br>
+//unordered_map&lt; int,int &gt; index;<br>
+TreeNode* buildTree(vector&lt; int &gt;&amp; preorder, vector&lt; int &gt;&amp; inorder){<br>
+  /* 可以考虑使用hashmap帮助快速定位根节点<br>
+  for(int i=0;i&lt;preorder.size();i++)<br>
+    index[inorder[i]]=i; *<em>/<br>
+  return Struct(0, preorder.size()-1, 0, inorder.size()-1, preorder, inorder);<br>
+}<br>
+TreeNode</em> Struct(int leftPre, int rightPre, int leftIn, int rightIn, vector&lt; int &gt;&amp;  preorder, vector&lt; int &gt;&amp; inorder){<br>
+  if(leftPre&gt;rightPre || leftIn&gt;rightIn)<br>
+    return nullptr;<br>
+  TreeNode *root=new TreeNode(preorder[leftPre]);<br>
+  int start=leftIn;<br>
+  while(start&lt;=rightIn &amp;&amp; inorder[start]!=preorder[leftPre])<br>
+    start++;<br>
+  //start=index[preorder[leftPre]];<br>
+  root-&gt;left=Struct(leftPre+1,leftPre+start-leftIn,leftIn,start-1,preorder,inorder);<br>
+  root-&gt;right=Struct(leftPre+start-leftIn+1,rightPre,start+1,rightIn,preorder,inorder);<br>
+  return root;<br>
+}</p>
 
             </div>
-            
-              <div class="tag-container">
-                
-                  <a href="https://wtingfeng.github.io/tag/cB4QB3H_s/" class="tag">
-                    算法
-                  </a>
-                
-              </div>
             
             
               <div class="next-post">
                 <div class="next">下一篇</div>
-                <a href="https://wtingfeng.github.io/post/1gua-hao-pei-dui-wen-ti/">
+                <a href="https://wtingfeng.github.io/post/16gui-bing-pai-xu/">
                   <h3 class="post-title">
-                    1、括号配对问题
+                    16、归并排序
                   </h3>
                 </a>
               </div>

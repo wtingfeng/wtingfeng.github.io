@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://wtingfeng.github.io</id>
     <title>菜菜成长之路</title>
-    <updated>2020-07-29T15:13:48.544Z</updated>
+    <updated>2020-07-30T02:38:09.857Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://wtingfeng.github.io"/>
     <link rel="self" href="https://wtingfeng.github.io/atom.xml"/>
@@ -10,6 +10,17 @@
     <logo>https://wtingfeng.github.io/images/avatar.png</logo>
     <icon>https://wtingfeng.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 菜菜成长之路</rights>
+    <entry>
+        <title type="html"><![CDATA[18、最小栈]]></title>
+        <id>https://wtingfeng.github.io/post/18zui-xiao-zhan/</id>
+        <link href="https://wtingfeng.github.io/post/18zui-xiao-zhan/">
+        </link>
+        <updated>2020-07-30T02:18:58.000Z</updated>
+        <summary type="html"><![CDATA[<p>题目描述：设计一个支持 push ，pop ，top 操作，并能在常数时间内检索到最小元素的栈。push(x) —— 将元素 x 推入栈中。pop() —— 删除栈顶的元素。top() —— 获取栈顶元素。getMin() —— 检索栈中的最小元素。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>题目描述：设计一个支持 push ，pop ，top 操作，并能在常数时间内检索到最小元素的栈。push(x) —— 将元素 x 推入栈中。pop() —— 删除栈顶的元素。top() —— 获取栈顶元素。getMin() —— 检索栈中的最小元素。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[17、从前序和中序遍历序列构造二叉树]]></title>
         <id>https://wtingfeng.github.io/post/17cong-qian-xu-he-zhong-xu-bian-li-xu-lie-gou-zao-er-cha-shu/</id>
@@ -92,13 +103,6 @@
 ]]></summary>
         <content type="html"><![CDATA[<p>题目描述：给定一棵二叉搜索树，请找出其中的第k小的结点。例如， （5，3，7，2，4，6，8）    中，按结点数值大小顺序第三小结点的值为4。</p>
 ]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[数据库事务]]></title>
-        <id>https://wtingfeng.github.io/post/shu-ju-ku-shi-wu/</id>
-        <link href="https://wtingfeng.github.io/post/shu-ju-ku-shi-wu/">
-        </link>
-        <updated>2020-07-12T03:00:33.000Z</updated>
     </entry>
     <entry>
         <title type="html"><![CDATA[10、反转链表]]></title>

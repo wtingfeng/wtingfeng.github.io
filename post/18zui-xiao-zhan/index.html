@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>4、只出现一次的数字 III | 菜菜成长之路</title>
+<title>18、最小栈 | 菜菜成长之路</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -20,10 +20,8 @@
 
 
 
-    <meta name="description" content="题目描述：给定一个整数数组 nums，其中恰好有两个元素只出现一次，其余所有元素均出现两次。 找出只出现一次的那两个元素。
-
-思路：假设两个只出现1次的元素为a和b，按照异或的运算规律，将数组nums中的所有元素异或得到的结果为a ^ b=..." />
-    <meta name="keywords" content="算法" />
+    <meta name="description" content="题目描述：设计一个支持 push ，pop ，top 操作，并能在常数时间内检索到最小元素的栈。push(x) —— 将元素 x 推入栈中。pop() —— 删除栈顶的元素。top() —— 获取栈顶元素。getMin() —— 检索栈中的..." />
+    <meta name="keywords" content="" />
   </head>
   <body>
     <div id="app" class="main">
@@ -102,54 +100,46 @@
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
           <div class="post-detail">
-            <h2 class="post-title">4、只出现一次的数字 III</h2>
-            <div class="post-date">2020-07-02</div>
-            
-              <div class="feature-container" style="background-image: url('https://wtingfeng.github.io/post-images/4zhi-chu-xian-yi-ci-de-shu-zi-iii.jpg')">
-              </div>
+            <h2 class="post-title">18、最小栈</h2>
+            <div class="post-date">2020-07-30</div>
             
             <div class="post-content" v-pre>
-              <p>题目描述：给定一个整数数组 nums，其中恰好有两个元素只出现一次，其余所有元素均出现两次。 找出只出现一次的那两个元素。</p>
+              <p>题目描述：设计一个支持 push ，pop ，top 操作，并能在常数时间内检索到最小元素的栈。push(x) —— 将元素 x 推入栈中。pop() —— 删除栈顶的元素。top() —— 获取栈顶元素。getMin() —— 检索栈中的最小元素。</p>
 <!-- more -->
-<p>思路：假设两个只出现1次的元素为a和b，按照异或的运算规律，将数组nums中的所有元素异或得到的结果为a ^ b=c。异或的真值表为：0 ^ 0=0；0 ^ 1=1；1 ^ 0=1；1 ^ 1=0，因此若将a^b的运算过程和运算结果c用二进制形式表示，那么c的二进制表示中为1的位说明a和b对应的该位上的值不同。取c的二进制形式中最右边位1的位，保留为1，其余位置0，那么可以利用该数与数组全部元素进行&amp;操作，将数组nums划分为两类，若结果为0划分到第一类，若结果为1划分到第二类。这样两个只出现1次的元素a和b就分别被划分到第一类和第二类，任一出现2次的元素也被划分至同一类中。分别对两部分数组的所有元素进行异或操作，分别得到a和b的值。</p>
-<!-- more -->
-<p>实现：<br>
-<strong>class Solution{<br>
+<p>题目分析：<br>
+  若栈中有元素b c d,此时a入栈，那么无论之后对栈执行什么操作，只要a在栈中，b c d就一定在栈中，因为a被弹出之前，b c d不会被弹出。因此在操作过程中的任意一个时刻，只要栈顶元素是a,那么就可以确定栈里面现在的元素一定是abcd。可以在每个元素a入栈时把当前栈的最小值m存储起来，之后无论何时，如果栈顶是a，就可以直接返回存储的最小值m。<br>
+  使用一个辅助栈，与元素栈同步插入和删除，用于存储与每个元素对应的最小值，使得每个元素a与其相应的最小值m时刻保持一一对应。1、当一个元素要入栈时，我们取当前辅助栈的栈顶存储的最小值，与当前元素比较得出最小值，将这个最小值插入辅助栈中。2、当一个元素要出栈时，我们把辅助栈的栈顶元素也一并弹出。3、在任意一个时刻，栈内元素的最小值就存储在辅助栈的栈顶元素中。<br>
+class MinStack{<br>
+  stack&lt; int &gt; x_stack;<br>
+  stack&lt; int &gt; min_stack;<br>
 public:<br>
-    vector<code>&lt;int&gt;</code> singleNumber(vector <code>&lt;int&gt;</code> &amp; nums){<br>
-        int c=0;<br>
-        for(auto i:nums)<br>
-            c^=i;<br>
-        c&amp;=-c;<br>
-        vector<code>&lt;int&gt;</code> res;<br>
-        res.push_back(0);<br>
-        res.push_back(0);<br>
-        for(auto i:nums){<br>
-            if((i&amp;c)==0)<br>
-                res[0]^=i;<br>
-            else<br>
-                res[1]^=i;<br>
-        }<br>
-        return res;<br>
-    }<br>
-};</strong></p>
+  MinStack(){<br>
+    min_stack.push(INT_MAX);<br>
+}<br>
+  void push(int x){<br>
+    x_stack.push(x);<br>
+    min_stack.push(min(min_stack.top(),x));<br>
+}<br>
+  void pop(){<br>
+    x_stack.pop();<br>
+    min_stack.pop();<br>
+}<br>
+  int top(){<br>
+    return x_stack.top();<br>
+}<br>
+  int getMin(){<br>
+    return min_stack.top();<br>
+}<br>
+};</p>
 
             </div>
-            
-              <div class="tag-container">
-                
-                  <a href="https://wtingfeng.github.io/tag/cB4QB3H_s/" class="tag">
-                    算法
-                  </a>
-                
-              </div>
             
             
               <div class="next-post">
                 <div class="next">下一篇</div>
-                <a href="https://wtingfeng.github.io/post/3zhi-chu-xian-yi-ci-de-shu-zi-ii/">
+                <a href="https://wtingfeng.github.io/post/17cong-qian-xu-he-zhong-xu-bian-li-xu-lie-gou-zao-er-cha-shu/">
                   <h3 class="post-title">
-                    3、只出现一次的数字 II
+                    17、从前序和中序遍历序列构造二叉树
                   </h3>
                 </a>
               </div>

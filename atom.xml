@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://wtingfeng.github.io</id>
     <title>菜菜成长之路</title>
-    <updated>2020-07-30T02:38:09.857Z</updated>
+    <updated>2020-07-30T15:33:57.062Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://wtingfeng.github.io"/>
     <link rel="self" href="https://wtingfeng.github.io/atom.xml"/>
@@ -10,6 +10,17 @@
     <logo>https://wtingfeng.github.io/images/avatar.png</logo>
     <icon>https://wtingfeng.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 菜菜成长之路</rights>
+    <entry>
+        <title type="html"><![CDATA[19、LRU]]></title>
+        <id>https://wtingfeng.github.io/post/19lru/</id>
+        <link href="https://wtingfeng.github.io/post/19lru/">
+        </link>
+        <updated>2020-07-30T14:53:07.000Z</updated>
+        <summary type="html"><![CDATA[<p>题目描述：运用你所掌握的数据结构，设计和实现一个  LRU (最近最少使用) 缓存机制。它应该支持以下操作： 获取数据 get 和 写入数据 put 。获取数据 get(key) ： 如果关键字 (key) 存在于缓存中，则获取关键字的值（总是正数），否则返回 -1。写入数据 put(key, value) ： 如果关键字已经存在，则变更其数据值；如果关键字不存在，则插入该组「关键字/值」。当缓存容量达到上限时，它应该在写入新数据之前删除最久未使用的数据值，从而为新的数据值留出空间。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>题目描述：运用你所掌握的数据结构，设计和实现一个  LRU (最近最少使用) 缓存机制。它应该支持以下操作： 获取数据 get 和 写入数据 put 。获取数据 get(key) ： 如果关键字 (key) 存在于缓存中，则获取关键字的值（总是正数），否则返回 -1。写入数据 put(key, value) ： 如果关键字已经存在，则变更其数据值；如果关键字不存在，则插入该组「关键字/值」。当缓存容量达到上限时，它应该在写入新数据之前删除最久未使用的数据值，从而为新的数据值留出空间。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[18、最小栈]]></title>
         <id>https://wtingfeng.github.io/post/18zui-xiao-zhan/</id>
@@ -113,17 +124,6 @@
         <summary type="html"><![CDATA[<p>题目描述：定义一个函数，输入一个链表的头节点，反转该链表并输出反转后链表的头节点。</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>题目描述：定义一个函数，输入一个链表的头节点，反转该链表并输出反转后链表的头节点。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[9、K个一组反转链表]]></title>
-        <id>https://wtingfeng.github.io/post/9k-ge-yi-zu-fan-zhuan-lian-biao/</id>
-        <link href="https://wtingfeng.github.io/post/9k-ge-yi-zu-fan-zhuan-lian-biao/">
-        </link>
-        <updated>2020-07-03T02:54:18.000Z</updated>
-        <summary type="html"><![CDATA[<p>题目描述：给你一个链表，每 k 个节点一组进行反转，请你返回反转后的链表。k 是一个正整数，它的值小于或等于链表的长度。如果节点总数不是 k 的整数倍，那么请将最后剩余的节点保持原有顺序。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>题目描述：给你一个链表，每 k 个节点一组进行反转，请你返回反转后的链表。k 是一个正整数，它的值小于或等于链表的长度。如果节点总数不是 k 的整数倍，那么请将最后剩余的节点保持原有顺序。</p>
 ]]></content>
     </entry>
 </feed>

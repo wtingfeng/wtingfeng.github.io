@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>16、归并排序 | 菜菜成长之路</title>
+<title>20、memcpy()、memmove() | 菜菜成长之路</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -20,8 +20,10 @@
 
 
 
-    <meta name="description" content="归并排序是典型的分治思想的代表，首先把原问题分解为两个或多个子问题，然后求解子问题的解，最后使用子问题的解来构造出原问题的解。
-给定一个待排序的数组，首先把该数组划分为两个子数组，然后对子数组进行排序（递归调用归并排序），最后对两个有序的子..." />
+    <meta name="description" content="memmove和memcpy函数的区别和实现
+
+一、memmove()和memcpy()函数和strcpy()函数的区别；
+（1）使用的类型不同，strcpy()函数只对字符串进行操作；memmove()和memcpy()函数对所有类型都适..." />
     <meta name="keywords" content="" />
   </head>
   <body>
@@ -101,44 +103,48 @@
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
           <div class="post-detail">
-            <h2 class="post-title">16、归并排序</h2>
-            <div class="post-date">2020-07-28</div>
+            <h2 class="post-title">20、memcpy()、memmove()</h2>
+            <div class="post-date">2020-08-01</div>
             
             <div class="post-content" v-pre>
-              <pre><code>归并排序是典型的分治思想的代表，首先把原问题分解为两个或多个子问题，然后求解子问题的解，最后使用子问题的解来构造出原问题的解。
-给定一个待排序的数组，首先把该数组划分为两个子数组，然后对子数组进行排序（递归调用归并排序），最后对两个有序的子数组进行合并，使合并之后的数组为有序状态。
-1、归并排序采用了分治思想，它的核心在于合并子问题的解而不是求解子问题。
-2、归并排序不是原址排序，它有排序过程中需要借助额外的内存空间。
-3、归并排序为稳定排序
-4、归并排序的时间复杂度为O(NlogN).
-</code></pre>
-<p>一、基于递归的实现方法<br>
-分解：将当前待排序的序列A[low],...,A[high]一分为二，分裂点mid=(low+high)/2<br>
-求解：递归地对序列A[low],...,A[mid]和A[mid+1],...,A[high]进行归并排序<br>
-组合：将两个已排序子序列归并为一个有序序列<br>
-递归的终止条件：子序列长度为1<br>
-void MergeSort(int arr[], int arr1[],int low, int high){<br>
-  if(low&gt;=high)<br>
-    return;<br>
-  int mid=low+(high-low)/2;<br>
-  MergeSort(arr, arr1, low, mid);<br>
-  MergeSort(arr, arr1, mid+1, high);<br>
-  merge(arr1, arr, low, mid, high);<br>
-}<br>
-void merge(int arr[], int arr1[],int low, int mid, int high){<br>
-  int i=low,j=mid+1,k=0;<br>
-  while(i&lt;=mid&amp;&amp;j&lt;=high){<br>
-    if(arr[i]&lt;=arr[j])<br>
-      arr1[k++]=arr[i++];<br>
-    else<br>
-      arr1[k++]=arr[j++];<br>
+              <p>memmove和memcpy函数的区别和实现</p>
+<!-- more -->
+<p>一、memmove()和memcpy()函数和strcpy()函数的区别；<br>
+（1）使用的类型不同，strcpy()函数只对字符串进行操作；memmove()和memcpy()函数对所有类型都适用，为内存拷贝；<br>
+（2）strcpy()以’\0’为拷贝的结束条件；而memmove()和memcpy()函数则是以第三个参数num进行控制拷贝；</p>
+<p>二、函数说明：<br>
+1.memcpy函数的功能是从源src所指的内存地址的起始位置开始拷贝N个字节到目标dst所指的内存地址的起始位置中。<br>
+2.memmove函数的功能同memcpy基本一致，但是当src区域和dst内存区域重叠时，memcpy可能会出现错误，而memmove能正确进行拷贝</p>
+<p>三、memmove()和memcpy()函数的区别和联系：<br>
+相同点： 两个都是内存拷贝，对所有类型都适用；<br>
+不同点： （1）memcpy()函数是从前往后拷贝；假入出现内存重叠的现象；拷贝结果可能出错； （2）memmove()函数在memcpy()函数的基础上加入了对内存重叠拷贝的处理；引入了倒序拷贝的方式处理内存重叠的某些情况；保证拷贝的正确性；<br>
+void* memcpy(void* dest, void* src, unsigned int num){<br>
+  assert(dest&amp;&amp;src);<br>
+  char* dest_tmp=(char*)dest;<br>
+  const char* src_tmp=(const char*)src;<br>
+  while(num--){<br>
+    *dest_tmp++=*src_tmp++;<br>
   }<br>
-  while(i&lt;=mid)<br>
-    arr1[k++]=arr[i++];<br>
-  while(j&lt;=high)<br>
-    arr1[k++]=arr[j++];<br>
-  for(i=low,k=0;i&lt;=high;i++,k++)<br>
-    arr[i]=arr1[k];<br>
+  return dest;<br>
+}</p>
+<!-- more -->
+<p>void* memmove(void* dest, void* src, unsigned int num){<br>
+  assert(dest&amp;&amp;src);<br>
+  char* dest_tmp=(char*)dest;<br>
+  const char* src_tmp=(const char*)src;<br>
+  if(src_tmp&gt;dest_tmp || src_tmp+num&lt;=dest_tmp){<br>
+    while(num--){<br>
+      *dest_tmp++=*src_tmp++;<br>
+    }<br>
+  }<br>
+  else{<br>
+    dest_tmp+=num-1;<br>
+    src_tmp+=num-1;<br>
+    while(num--){<br>
+      *dest_tmp--=*src_tmp--;<br>
+    }<br>
+  }<br>
+  return dest;<br>
 }</p>
 
             </div>
@@ -146,9 +152,9 @@ void merge(int arr[], int arr1[],int low, int mid, int high){<br>
             
               <div class="next-post">
                 <div class="next">下一篇</div>
-                <a href="https://wtingfeng.github.io/post/15hui-wen-lian-biao/">
+                <a href="https://wtingfeng.github.io/post/19lru/">
                   <h3 class="post-title">
-                    15、回文链表
+                    19、LRU
                   </h3>
                 </a>
               </div>

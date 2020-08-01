@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>11、二叉搜索树的第K个结点 | 菜菜成长之路</title>
+<title>菜菜成长之路</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -20,10 +20,7 @@
 
 
 
-    <meta name="description" content="题目描述：给定一棵二叉搜索树，请找出其中的第k小的结点。例如， （5，3，7，2，4，6，8）    中，按结点数值大小顺序第三小结点的值为4。
-
-思路分析：二叉搜索树按照中序遍历的顺序打印出来正好就是排序好的顺序，所以按照中序遍历顺序找到..." />
-    <meta name="keywords" content="算法" />
+    <meta name="description" content="小冯学习笔记">
   </head>
   <body>
     <div id="app" class="main">
@@ -101,58 +98,35 @@
 
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
-          <div class="post-detail">
-            <h2 class="post-title">11、二叉搜索树的第K个结点</h2>
-            <div class="post-date">2020-07-12</div>
-            
-            <div class="post-content" v-pre>
-              <p>题目描述：给定一棵二叉搜索树，请找出其中的第k小的结点。例如， （5，3，7，2，4，6，8）    中，按结点数值大小顺序第三小结点的值为4。</p>
-<!-- more -->
-<p>思路分析：二叉搜索树按照中序遍历的顺序打印出来正好就是排序好的顺序，所以按照中序遍历顺序找到第K个结点就是结果。<br>
-class Solution {<br>
-public:<br>
-  int index=0;<br>
-  TreeNode* KthNode(TreeNode* pRoot, int k)<br>
-  {<br>
-    if(pRoot != nullptr){<br>
-      TreeNode *node=KthNode(pRoot-&gt;left,k);<br>
-      if(node!=nullptr)<br>
-        return node;<br>
-      index++;<br>
-      if(index==k)<br>
-        return pRoot;<br>
-      node=KthNode(pRoot-&gt;right,k);<br>
-      if(node!=nullptr)<br>
-        return node;<br>
-    }<br>
-    return nullptr;<br>
-  }<br>
-};</p>
-
-            </div>
-            
-              <div class="tag-container">
-                
-                  <a href="https://wtingfeng.github.io/tag/cB4QB3H_s/" class="tag">
-                    算法
-                  </a>
-                
-              </div>
-            
-            
-              <div class="next-post">
-                <div class="next">下一篇</div>
-                <a href="https://wtingfeng.github.io/post/10fan-zhuan-lian-biao/">
-                  <h3 class="post-title">
-                    10、反转链表
-                  </h3>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://wtingfeng.github.io/post/2zhi-chu-xian-yi-ci-de-shu-zi/">
+                  <h2 class="post-title">2、只出现一次的数字</h2>
                 </a>
+                <div class="post-date">
+                  2020-07-02
+                </div>
+                <div class="post-abstract">
+                  <p>题目描述：给定一个非空整数数组，除了某个元素只出现一次以外，其余每个元素均出现两次。找出那个只出现了一次的元素。</p>
+
+                </div>
               </div>
-            
+              
+                <a class="right" href="https://wtingfeng.github.io/post/2zhi-chu-xian-yi-ci-de-shu-zi/">
+                  <div class="feature-container" style="background-image: url('https://wtingfeng.github.io/post-images/2zhi-chu-xian-yi-ci-de-shu-zi.jpg')">
+                  </div>
+                </a>
+              
+            </article>
+          
 
-            
-
-          </div>
+          <div class="pagination-container">
+  
+    <a href="https://wtingfeng.github.io/page/2/" class="prev"><i class="icon-arrow-ios-back-outline"></i> 上一页</a>
+  
+  
+</div>
 
         </div>
       </div>
